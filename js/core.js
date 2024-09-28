@@ -189,12 +189,19 @@ document.querySelector("#file").addEventListener('change', async (e) => {
     const tbody = document.querySelector('tbody');
     tbody.innerHTML = ''; // Clear any existing rows
 
+    const noResultsMessage = document.querySelector('#no-results');
+    noResultsMessage.style.display = 'none';
+
     if (e.target.files.length > 0) {
         try {
             const file = e.target.files[0];
             const content = await readFile(file);
             const parsedJson = JSON.parse(content);
             const subtitles = extractSubtitlesFromBcutJson(parsedJson);
+            if (subtitles.length === 0) {
+                noResultsMessage.style.display = 'block';
+                return;
+            }
             populateTable(subtitles, tbody);
 
             // Generate subtitle content in all formats

@@ -44,7 +44,6 @@ p {
     transition: color 0.3s;
     text-align: center;
     background-color: transparent;
-    /* 无背景色 */
     display: block;
     margin: 10px auto;
     border: 1px solid #ccc;
@@ -53,7 +52,6 @@ p {
 
 .file-label:hover {
     color: #0056b3;
-    /* 悬浮时字体颜色变化 */
 }
 
 .file-path-hint {
@@ -130,4 +128,12 @@ th {
 
 tbody tr:nth-child(even) {
     background-color: #f9f9f9;
+}
+
+/* 提示信息 */
+#no-results {
+    display: none;
+    color: red;
+    text-align: center;
+    margin-top: 10px;
 }
