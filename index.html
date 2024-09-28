@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>必剪字幕导出</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="icon" href="./favicon.ico" />
+</head>
+
+<body>
+    <h1>必剪字幕导出</h1>
+
+    <div class="file-input-container">
+        <h3>选择字幕JSON文件</h3>
+        <label class="file-label" for="file">
+            <input type="file" id="file" accept="application/json">
+            <span>选择文件</span>
+            <span class="file-path-hint">(悬浮查看文件路径示例)</span>
+        </label>
+        <div class="tooltip">例如: <br> /Users/youyi/Movies/Bcut
+            Drafts/<br>A14560CA-95A5-48EA-8FD1-CE7AC75C5496/09-31-31-809--{295e01ef-e0ac-4d7a-91ac-bb86705ef9ca}.json
+        </div>
+    </div>
+
+    <h3>导出</h3>
+    <div id="download-buttons">
+        <button>导出 srt</button>
+        <button>导出 ass</button>
+        <button>导出 txt</button>
+        <button>导出 csv</button>
+    </div>
+
+    <p style="font-weight: bold;">导出效果预览：字幕内容</p>
+    <table>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>起始时间</th>
+                <th>结束时间</th>
+                <th>字幕内容</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="./js/core.js"></script>
+</body>
+
+</html>
